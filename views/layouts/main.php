@@ -18,6 +18,11 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="shortcut icon" href="<?php echo Yii::$app->urlManager->baseUrl; ?>/assets/favicon.png">
+    <script src="<?php echo Yii::$app->urlManager->baseUrl; ?>/assets/tes.js"></script>
+    <script>
+        // insert some jquery stuff here
+    </script>
     <?php $this->head() ?>
 </head>
 <body>
@@ -37,7 +42,7 @@ AppAsset::register($this);
                 'items' => [
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
+                    ['label' => 'Signup', 'url' => ['/site/signup']],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Login', 'url' => ['/site/login']] :
                         ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',

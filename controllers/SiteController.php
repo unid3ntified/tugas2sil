@@ -8,9 +8,12 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\SignupForm;
+use app\models\ActivityLog;
 
 class SiteController extends Controller
 {
+    public $notif;
     public function behaviors()
     {
         return [
@@ -49,7 +52,15 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $carousel = Yii::$app->db->createCommand('SELECT id FROM uploaded_file WHERE status = "Aktif" AND type = "Carousel"')->queryAll();
+        if (isset($_GET['notif']))
+            $notif = $_GET['notif'];
+        else
+            $notif = '';
+        return $this->render('index', [
+                'carousel' => $carousel,
+                'notif' => $notif,
+            ]);
     }
 
     public function actionLogin()
@@ -60,7 +71,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(['site/index', 'notif' => 'Berhasil login']);
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -71,8 +82,7 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
-        return $this->goHome();
+        return $this->redirect(['site/index', 'notif' => 'Berhasil logout']);
     }
 
     public function actionContact()
@@ -92,5 +102,27 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    // $activitylog = new ActivityLog();
+                    // $activitylog->user_id = Yii::$app->user->id;
+                    // $activitylog->timestamp = date('Y-m-d H:i:s');
+                    // $activitylog->activity = 'Melakukan registrasi';
+                    // $activitylog->save();
+
+                    return $this->redirect(['site/index', 'notif' => 'Akun berhasil dibuat']);
+                }
+            }
+        }
+        
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
 }

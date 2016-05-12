@@ -1,51 +1,127 @@
 <?php
+use yii\helpers\Html;
+use yii\bootstrap\Alert;
+
 /* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+$this->title = 'Placeholder';
 ?>
 <div class="site-index">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div id="Carousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+              <?php
+                foreach ($carousel as $key => $value) {
+                  if ($key !== 0)
+                    echo '<li data-target="#Carousel" data-slide-to="'.$key.'"></li>';
+                }
+              ?>
+            </ol>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <?php
+                // foreach ($data as $key => $value) {
+                //   if ($key == 0)
+                //     echo '<div class="item active">'.Html::img(['/file','id'=>$value['id']]).'</div>';
+                //   else
+                //     echo '<div class="item">'.Html::img(['/file','id'=>$value['id']]).'</div>';
+                // }
+              ?>
+            </div>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#Carousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#Carousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
     </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+    <?php
+        if ($notif!='')
+        {
+            Alert::begin(['options' => ['class' => 'alert-warning']]);
+            echo $notif;
+            Alert::end();
+        }
+    ?>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 align="center">New product everyday!</h2>
+            <div class="row">
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            <div class="row">
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="row" align ="right">
+                <?= Html::a('View all new products', ['/product/index'], ['class' => 'btn btn-success']) ?>
             </div>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 align="center">Get limited discount today!</h2>
+            <div class="row">
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+            </div>
+            <div class="row" align ="right">
+                <?= Html::a('View all new products', ['/product/index'], ['class' => 'btn btn-success']) ?>
+            </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-12">
+            <h2 align="center">Hot & popular items!</h2>
+            <div class="row">
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+                <div class="col-md-6" align="center">
+                    No product available.
+                </div>
+            </div>
+            <div class="row" align ="right">
+                <?= Html::a('View all new products', ['/product/index'], ['class' => 'btn btn-success']) ?>
+            </div>
+        </div>
     </div>
 </div>

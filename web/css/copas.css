@@ -1,0 +1,665 @@
+html,
+body {
+    height: 100%;
+    font-family: "tahoma";
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: auto 0px;
+    padding: 0 0 20px;
+}
+
+#login{
+    margin-top: 80px;
+}
+
+#login-title{
+    font-size: 30pt;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px #283578 solid;
+    color: #283578;
+}
+
+.footer {
+    height: 45px;
+    background-color: #202d4d;
+    margin-top: 30px;
+    width:100%;
+    position:relative;
+}
+
+#bottomdownload
+{
+    margin-bottom: 280px;
+}
+
+body > footer > div > p.pull-center {
+    padding-top: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+	width: 60px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.navbar {
+    background-color: #202d4d;
+    background-image: none;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    border: 0px;
+}
+
+.navbar .nav {
+    margin-right: -80px;
+}
+
+.navbar .nav > li > a {
+    color: #ffffff;
+    background-color: #202d4d;
+}
+
+.navbar .nav > li > a:visited {
+    color: #ffffff;
+    background-color: #202d4d;
+}
+
+.navbar .nav > li > a:hover {
+    color: #ece313;
+    background-color: #202d4d;
+}
+
+.navbar .nav > li > a:hover:visited {
+    color: #ece313;
+    background-color: #202d4d;
+}
+
+#cpicon > a:before
+{
+    content:"\e033";
+    font-family: "Glyphicons Halflings";
+}
+
+#officon > a:before
+{
+    content:"\e017";
+    font-family: "Glyphicons Halflings";
+}
+
+#rightmenu
+{
+    position: fixed;
+    background-color: #202d4d;
+    width: 220px;
+    margin-top:-55px;
+    height: 100%;
+}
+
+#toggle
+{
+    margin-bottom:15px;
+}
+
+#toggle0
+{
+    margin-left: -120px;
+}
+
+#toggle0 > a:after
+{
+    content:"\e055";
+    font-family: 'Glyphicons Halflings';
+    font-size: 16pt;
+}
+
+#toggle > a:after
+{
+    content:"\e055";
+    font-family: 'Glyphicons Halflings';
+    font-size: 16pt;
+}
+
+#toggle1
+{
+    width: 100%;
+    font-size: 10pt;   
+    color:#8490fe;
+    padding: 5px 0px 5px 15px;
+    transition: all .5s;
+}
+
+#toggle1 > a:visited:hover
+{
+    width: 100%;
+    font-size: 10pt;   
+      color: #ece313;
+    background-color: #202d4d;
+    padding: 5px 0px 5px 15px;
+    transition: all .5s;
+}
+
+#toggle2
+{
+    width: 100%;
+    font-size: 10pt;   
+    color:#8490fe;
+    padding: 5px 0px 5px 15px;
+    transition: all .5s;
+}
+
+#rightmenu > li > a
+{
+    width: 100%;
+    font-size: 10pt;   
+    color:#ffffff;
+    padding: 5px 0px 5px 15px;
+    transition: all .5s;
+}
+
+#rightmenu > li > a:hover{
+    color:#ece313;
+    background-color: #202d4d;
+}
+
+
+#rightmenu > li.active > a{
+    background-color: #193492;
+    color:#ece313;
+}
+
+#toggle1 > a{
+    margin-left: -15px;
+}
+
+#toggle2 > a{
+    margin-left: -15px;
+}
+
+#item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9, #item10, #item11, #item12, #item13, #item14, #toggle5, #item17, #item18
+{
+    padding-left: 20px;
+}
+
+#item15, #item16
+{
+    padding-left: 35px;
+}
+
+#page-wrapper{
+
+    padding: 40px 70px;
+    color: #111;
+}
+
+.highcharts-legend-item
+{
+    margin-top:-50px;
+}
+
+#wrapbar{
+    width:95%;
+}
+
+#itemhome > a:before
+{
+    content:"\e021 ";
+    font-family: 'Glyphicons Halflings';
+}
+
+#itemdashboard > a:before
+{
+    content:"\e141";
+    font-family: 'Glyphicons Halflings';
+}
+
+#itemsharing > a:before
+{
+    content:"\e025 ";
+    font-family: 'Glyphicons Halflings';
+}
+
+#itemtopology > a:before
+{
+    content:"\e142";
+    font-family: 'Glyphicons Halflings';
+}
+
+#toggle1 > a:before
+{
+    content:"\e137";
+    font-family: 'Glyphicons Halflings';
+}
+
+#toggle2 > a:before
+{
+    content:"\e086 ";
+    font-family: 'Glyphicons Halflings';
+}
+
+#itemadmin > a:before
+{
+    content:"\e008 ";
+    font-family: 'Glyphicons Halflings';
+}
+
+#detailtext > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+}
+
+#detailtextg > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+    color: #24b66c;
+}
+
+#detailtextr > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+    color: #fa5b24;
+}
+
+#detailtexto > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+    color: #f1a02c;
+}
+
+#detailtextp > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+    color: #a92cf1;
+}
+
+#detailtexty > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+    color: #b3d10e;
+}
+
+#detailtextc > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+    color: #11cb87;
+}
+
+#detailtexte > a:after
+{
+    content:"\e131";
+    font-family: 'Glyphicons Halflings';
+    color: #676363;
+}
+  
+
+
+#detailtextg > a
+{
+    color: #24b66c;
+}
+
+#detailtextr > a
+{
+    color: #fa5b24;
+}
+
+#detailtexto > a
+{
+    color: #f1a02c;
+}
+
+#detailtextp > a
+{
+    color: #a92cf1;
+}
+
+#detailtexty > a
+{
+    color: #b3d10e;
+}
+
+#detailtextc > a
+{
+    color: #11cb87;
+}
+
+#detailtexte > a
+{
+    color: #676363;
+}
+
+
+#detailtext
+{
+    background-color: #f5f5f5;
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+
+}
+
+#detailtextg
+{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+    background-color: #f5f5f5;
+}
+
+#detailtextr
+{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+    background-color: #f5f5f5;
+}
+
+#detailtexto
+{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+    background-color: #f5f5f5;
+}
+
+#detailtextp
+{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+    background-color: #f5f5f5;
+}
+
+#detailtexty
+{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+    background-color: #f5f5f5;
+}
+#detailtextc
+{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+    background-color: #f5f5f5;
+
+}
+
+#detailtexte
+{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: -15px;
+    background-color: #f5f5f5;
+}
+
+#largebox , #largebox2
+{
+    padding-left:70px;
+}
+
+#bluebox
+{
+    background-color: #1191e4;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+
+}
+
+#greenbox
+{
+    background-color: #24b66c;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;    
+}
+
+#redbox
+{
+    background-color: #fa5b24;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+#orangebox
+{
+    background-color: #f1a02c;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+#purplebox
+{
+    background-color: #a92cf1;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+#yellowbox
+{
+    background-color: #b3d10e;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+#oceanbox
+{
+    background-color: #11cb87;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+#greybox
+{
+    background-color: #676363;
+    width: 20%;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    margin-right: 40px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+#highcharts-4 > svg > g:nth-child(8) > text
+{
+    opacity: 0;
+}
+
+.inner
+{
+    padding-left: 20px;
+}
+
+.highcharts-background
+{
+    fill: #f5f5f5;
+}
+
+#chart3 , #chart4
+{
+    padding-right: 10px;
+}
+
+#chart1 , #chart2, #chart3, #chart5 , #chart6
+{
+    margin-bottom: 10px;
+}
+
+#chart5
+{
+    padding-left: -15px;
+}
+
+div.required label:after {
+    content: " *";
+    color: red;
+}
+
+#highcharts-4 > svg > g.highcharts-axis-labels.highcharts-yaxis-labels > text
+{
+   opacity: 0;
+}
+
+#highcharts-6 > svg > g.highcharts-axis-labels.highcharts-yaxis-labels > text
+{
+   opacity: 0;
+}
+
+img
+{
+    max-height: 90%; 
+    max-width: 90%;
+}
+
+#Carousel > div > div.item > img
+{
+    width: 1027px;
+    height: 345px;
+}
+
+#newsimage > img
+{
+    max-height: 40%; 
+    max-width: 40%;
+}
+
+#sliderlist
+{
+    padding-bottom: 5px;
+}
+
+#sliderlist > img
+{
+    max-height: 80%; 
+    max-width: 80%;
+}
+
+
