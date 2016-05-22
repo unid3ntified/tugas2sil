@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    font-family: "tahoma";
 }
 
 .wrap {
@@ -12,13 +13,6 @@ body {
 
 .wrap > .container {
     padding: 70px 15px 20px;
-}
-
-.footer {
-    height: 60px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
 }
 
 .jumbotron {
@@ -93,4 +87,59 @@ a.desc:after {
 div.required label:after {
     content: " *";
     color: red;
+}
+
+.navbar {
+    background-color: #c4c4c4;
+    background-image: none;
+    border-radius: 0px;
+    border: 0px;
+}
+
+#rightmenu
+{
+    position: fixed;
+    background-color: #c4c4c4;
+    width: 220px;
+    margin-top:-70px;
+    height: 100%;
+}
+
+#wrapbar{
+    width:95%;
+}
+
+#page-wrapper{
+
+    padding: 40px 70px;
+    color: #111;
+}
+
+.footer {
+    height: 45px;
+    background-color: #c4c4c4;
+    margin-top: 30px;
+    width:100%;
+    position:relative;
+}
+
+body > footer > div > p.pull-center {
+    padding-top: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#user-view{
+    text-align: center;
+}
+
+#user-view > img{
+    max-height: 40%; 
+    max-width: 40%;
+}
+
+#sliderlist > img
+{
+    max-height: 80%; 
+    max-width: 80%;
 }

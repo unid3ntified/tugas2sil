@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\base\DynamicModel;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
@@ -52,13 +53,13 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $carousel = Yii::$app->db->createCommand('SELECT id FROM uploaded_file WHERE status = "Aktif" AND type = "Carousel"')->queryAll();
+        $data = Yii::$app->db->createCommand('SELECT id FROM uploaded_file WHERE type = "slider"')->queryAll();
         if (isset($_GET['notif']))
             $notif = $_GET['notif'];
         else
             $notif = '';
         return $this->render('index', [
-                'carousel' => $carousel,
+                'data' => $data,
                 'notif' => $notif,
             ]);
     }
@@ -107,6 +108,7 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
@@ -124,5 +126,40 @@ class SiteController extends Controller
         return $this->render('signup', [
             'model' => $model,
         ]);
+    }
+
+    public function actionSlider()
+    {
+        $model = new DynamicModel([
+            'file_id'
+        ]);
+     
+        // behavior for upload file
+        $model->attachBehavior('upload', [
+            'class' => 'mdm\upload\UploadBehavior',
+            'attribute' => 'file',
+            'savedAttribute' => 'file_id', 
+            //'uploadPath' => Yii::$app->homeUrl.'/files',
+        ]);
+
+        $data = Yii::$app->db->createCommand('SELECT id FROM uploaded_file WHERE type = "slider"')->queryAll();   
+     
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->saveUploadedFile() !== false) {
+                if ($model->file_id !== NULL && $model->file_id !== '')
+                    Yii::$app->db->createCommand('UPDATE uploaded_file SET type = "slider" WHERE id = '.$model->file_id)->execute();
+                Yii::$app->session->setFlash('success', 'Upload Success');
+            }
+        }
+        return $this->render('slider',[
+            'model' => $model,
+            'data' => $data,
+        ]);
+    }
+
+    public function actionDeleteslider($id)
+    {
+        Yii::$app->db->createCommand('DELETE FROM uploaded_file WHERE id = '.$id)->execute();
+        return $this->redirect(['slider']);
     }
 }

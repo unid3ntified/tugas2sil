@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\bootstrap\Alert;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UserSearch */
@@ -11,8 +12,16 @@ $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
-
+    
     <h1><?= Html::encode($this->title) ?></h1>
+    <?php
+        if ($notif!='')
+        {
+            Alert::begin(['options' => ['class' => 'alert-warning']]);
+            echo $notif;
+            Alert::end();
+        }
+    ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -28,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'password_reset_token',
             // 'auth_key',
             'email:email',
-            'status',
+            //'status',
             'role',
             'created_at',
             // 'updated_at',

@@ -131,6 +131,7 @@ class SignupForm extends Model
 			$user->phone = $this->phone;
 			$user->phone2 = $this->phone2;
 			$user->occupation = $this->occupation;
+            $user->image = 2;
 			
             $user->generateAuthKey();
             if ($user->save()) {

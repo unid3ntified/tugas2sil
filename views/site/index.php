@@ -7,13 +7,13 @@ $this->title = 'Placeholder';
 ?>
 <div class="site-index">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
           <div id="Carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#Carousel" data-slide-to="0" class="active"></li>
               <?php
-                foreach ($carousel as $key => $value) {
+                foreach ($data as $key => $value) {
                   if ($key !== 0)
                     echo '<li data-target="#Carousel" data-slide-to="'.$key.'"></li>';
                 }
@@ -23,12 +23,12 @@ $this->title = 'Placeholder';
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <?php
-                // foreach ($data as $key => $value) {
-                //   if ($key == 0)
-                //     echo '<div class="item active">'.Html::img(['/file','id'=>$value['id']]).'</div>';
-                //   else
-                //     echo '<div class="item">'.Html::img(['/file','id'=>$value['id']]).'</div>';
-                // }
+                foreach ($data as $key => $value) {
+                  if ($key == 0)
+                    echo '<div class="item active">'.Html::img(['/file','id'=>$value['id']]).'</div>';
+                  else
+                    echo '<div class="item">'.Html::img(['/file','id'=>$value['id']]).'</div>';
+                }
               ?>
             </div>
 
